@@ -2,6 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>作文評閱圖卡｜國立屏北高級中學</title>
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
 <style>
@@ -96,6 +97,54 @@ h1{ font-family:"Songti SC","Songti TC","Hiragino Mincho ProN",serif; font-weigh
   background:var(--green); color:#fdfbf6; border:0; border-radius:var(--s5);
   padding:var(--s4) var(--s3); font-size:16px; font-weight:700;
   font-family:inherit; cursor:pointer; box-shadow:0 2px 16px rgba(0,0,0,.18); }
+
+/* 手機版：將固定畫布改為單欄閱讀，桌面版仍保留原尺寸。 */
+@media (max-width: 720px){
+  :root{
+    --s1:24px; --s2:24px; --s3:16px; --s4:12px; --s5:8px;
+    --gap:12px; --radius:14px;
+  }
+  body{
+    width:100%; height:auto; min-height:100vh;
+    overflow-x:hidden; overflow-y:auto;
+  }
+  .mtn{ width:100%; height:320px; }
+  .mtn-b{ width:100%; height:180px; }
+  .weave-tl{ width:128px; height:128px; }
+  .weave-br{ width:150px; height:150px; }
+  .weave-tr{ display:none; }
+  .wrap{ height:auto; min-height:100vh; padding:var(--s1) 20px 20px; }
+  h1{ font-size:clamp(36px, 9vw, 52px); }
+  .sub{ font-size:16px; line-height:1.65; }
+  .stats{ grid-template-columns:1fr; gap:8px; margin-top:24px; }
+  .stat{ padding:8px; gap:16px; }
+  .stat + .stat::before{ display:none; }
+  .stat .ico{ width:56px; height:56px; }
+  .stat .ico svg{ width:30px; height:30px; }
+  .stat .n{ font-size:38px; }
+  .stat .n small{ font-size:20px; }
+  .stat .cap{ font-size:14px; }
+  .cards{ grid-template-columns:1fr; gap:12px; margin-top:24px; flex:none; }
+  .card{ grid-template-columns:56px 1px minmax(0,1fr); gap:12px; padding:16px; }
+  .card .badge-ico{ width:56px; height:56px; }
+  .card .badge-ico svg{ width:32px; height:32px; }
+  .tag{ font-size:14px; padding:6px 10px; }
+  .card h3{ font-size:18px; margin-top:12px; }
+  .card li{ font-size:16px; padding-left:14px; }
+  .flow{ gap:6px; margin-top:16px; }
+  .flow span{ font-size:14px; padding:6px 10px; }
+  .foot{ flex-direction:column; align-items:flex-start; gap:6px;
+    margin-top:20px; font-size:13px; padding-right:0; }
+  .ui-only{ position:static; display:block; width:max-content;
+    margin:16px 20px 24px auto; padding:10px 14px; font-size:14px; }
+}
+@media (max-width: 380px){
+  .wrap{ padding-left:16px; padding-right:16px; }
+  .card{ grid-template-columns:48px 1px minmax(0,1fr); gap:10px; padding:14px; }
+  .card .badge-ico{ width:48px; height:48px; }
+  .card .badge-ico svg{ width:28px; height:28px; }
+  .card li{ font-size:15px; }
+}
 </style>
 </head>
 <body>
